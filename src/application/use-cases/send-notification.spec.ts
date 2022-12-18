@@ -1,4 +1,4 @@
-import { inMemoryNotificationsRepository } from "../../../test/repositories/in-memory-notification-repository";
+import { inMemoryNotificationsRepository } from "@test/repositories/in-memory-notification-repository";
 import { SendNotification } from "./send-notification"
 
 describe('Send Notification',()=>{
@@ -10,7 +10,7 @@ describe('Send Notification',()=>{
         const {notification} = await sendNotification.execute({
             content:'An awesome notification',
             category: 'Social',
-            recipientId:'new-recipient-id'
+            recepientId:'new-recipient-id'
         })
 
         expect(notificationsRepository.notifications).toHaveLength(1);
