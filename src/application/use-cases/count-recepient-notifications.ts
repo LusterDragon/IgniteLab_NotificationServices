@@ -17,7 +17,6 @@ export class CountRecepientNotification {
 
     }
 
-
     async execute(request: CountRecepientNotificationRequest): Promise<CountRecepientNotificationResponse> {
         const { recepientId } = request;
 

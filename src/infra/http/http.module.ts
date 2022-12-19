@@ -1,14 +1,25 @@
+import { CancelNotification } from "@application/use-cases/cancel-notification";
+import { CountRecepientNotification } from "@application/use-cases/count-recepient-notifications";
+import { GetRecepientNotification } from "@application/use-cases/get-recepient-notification";
+import { ReadNotification } from "@application/use-cases/read-notification";
+import { UnreadNotification } from "@application/use-cases/unread-notification";
 import { Module } from "@nestjs/common";
 import { SendNotification } from "../../application/use-cases/send-notification";
 import { DatabaseModule } from "../database/database.module";
 import { NotificationsController } from "./controllers/notifications.controller";
 
 @Module({
-    imports:[DatabaseModule],
-    controllers:[NotificationsController],
-    providers:[SendNotification]    
+    imports: [DatabaseModule],
+    controllers: [NotificationsController],
+    providers: [
+        SendNotification,
+        UnreadNotification,
+        ReadNotification,
+        CancelNotification,
+        CountRecepientNotification,
+        GetRecepientNotification]
 })
 
-export class HttpModule{
-    
+export class HttpModule {
+
 }

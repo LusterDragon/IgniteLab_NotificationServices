@@ -3,7 +3,7 @@ import { Injectable } from "@nestjs/common/decorators";
 import { NotificationNotFound } from "./errors/notification-not-found";
 
 interface UnreadNotificationRequest {
-  notificationId:string
+    notificationId: string
 }
 
 type UnreadNotificationResponse = void;
@@ -11,22 +11,21 @@ type UnreadNotificationResponse = void;
 @Injectable()
 export class UnreadNotification {
 
-    constructor(private notificationsRepository:NotificationsRepository){
+    constructor(private notificationsRepository: NotificationsRepository) {
 
     }
-
 
     async execute(request: UnreadNotificationRequest): Promise<UnreadNotificationResponse> {
         const { notificationId } = request;
 
         const notification = await this.notificationsRepository.findById(notificationId);
 
-        if(!notification){
+        if (!notification) {
             throw new NotificationNotFound();
         }
 
         notification.unread();
-        
+
         await this.notificationsRepository.save(notification);
     }
 }

@@ -15,7 +15,6 @@ export class CancelNotification {
 
     }
 
-
     async execute(request: CancelNotificationRequest): Promise<CancelNotificationResponse> {
         const { notificationId } = request;
 

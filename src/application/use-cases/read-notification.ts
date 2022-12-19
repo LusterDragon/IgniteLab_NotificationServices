@@ -15,7 +15,6 @@ export class ReadNotification {
 
     }
 
-
     async execute(request: ReadNotificationRequest): Promise<ReadNotificationResponse> {
         const { notificationId } = request;
 

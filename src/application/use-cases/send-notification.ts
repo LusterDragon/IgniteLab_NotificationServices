@@ -20,7 +20,6 @@ export class SendNotification {
 
     }
 
-
     async execute(request: SendNotificationRequest): Promise<SendNotificationResponse> {
         const { recepientId, content, category } = request;
 
