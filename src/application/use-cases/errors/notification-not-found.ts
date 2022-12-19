@@ -1,6 +1,6 @@
-export class NotificationNotFound extends Error{
+export class NotificationNotFound extends Error {
 
-    constructor(){
+    constructor() {
         super('Notification not found!')
     }
 }

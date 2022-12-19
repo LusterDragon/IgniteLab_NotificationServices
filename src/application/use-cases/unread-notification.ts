@@ -1,6 +1,7 @@
-import { NotificationsRepository } from "../repository/notification-repository";
-import { Injectable } from "@nestjs/common/decorators";
+import { Injectable } from "@nestjs/common";
 import { NotificationNotFound } from "./errors/notification-not-found";
+import { NotificationsRepository } from "../repository/notification-repository";
+
 
 interface UnreadNotificationRequest {
     notificationId: string

@@ -9,12 +9,13 @@ const config: Config = {
     transform: {
         "^.+\\.(t|j)s$": "ts-jest"
     },
+    collectCoverageFrom: ["**/*.(t|j)s"],
+    coverageDirectory: "../coverage",
+    testEnvironment: "node",
+
     moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
         prefix:'<rootDir>/'
     }),
-    collectCoverageFrom: ["**/*.(t|j)s"],
-    coverageDirectory: "../coverage",
-    testEnvironment: "node"
 };
 
 export default config;

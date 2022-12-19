@@ -1,11 +1,10 @@
-import { Injectable } from "@nestjs/common/decorators";
+import { Injectable } from "@nestjs/common";
 import { Notification } from "@application/entities/notification";
 import { NotificationsRepository } from "../repository/notification-repository";
 
 
-
 interface GetRecepientNotificationRequest {
-  recepientId:string
+    recepientId: string
 }
 
 interface GetRecepientNotificationResponse {
@@ -15,7 +14,7 @@ interface GetRecepientNotificationResponse {
 @Injectable()
 export class GetRecepientNotification {
 
-    constructor(private notificationsRepository:NotificationsRepository){
+    constructor(private notificationsRepository: NotificationsRepository) {
 
     }
 
@@ -25,6 +24,6 @@ export class GetRecepientNotification {
 
         const notifications = await this.notificationsRepository.findManyByRecepientId(recepientId);
 
-        return {notifications};
+        return { notifications };
     }
 }
